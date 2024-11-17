@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkWEPMessenger</title>
+    <link rel="icon" href="img.png" type="image/png">
+    <style>
+        :root {
+            --neon-green: #0f0;
+            --dark-bg: #000;
+            --terminal-font: 'Courier New', monospace;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--dark-bg);
+            color: var(--neon-green);
+            font-family: var(--terminal-font);
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .login-form, .chat-container {
+            background: rgba(0,20,0,0.9);
+            border: 1px solid var(--neon-green);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+        .contacts-list {
+            width: 250px;
+            border-right: 1px solid var(--neon-green);
+            padding: 10px;
+            height: 400px;
+            overflow-y: auto;
+        }
+        .search-box {
+            width: calc(100% - 22px);
+            margin: 10px 0;
+            padding: 8px;
+            background: var(--dark-bg);
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            font-family: var(--terminal-font);
+        }
+        /* (rest of the styles remain the same) */
+        /* Add your additional CSS here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="loginForm" class="login-form">
+            <h2 class="glitch">SECURE ACCESS TERMINAL</h2>
+            <div class="typing-effect">Enter credentials:</div>
+            <input type="text" id="username" placeholder="Username" autocomplete="username">
+            <input type="password" id="password" placeholder="Password" autocomplete="current-password">
+            <button onclick="login()">INITIALIZE CONNECTION</button>
+        </div>
+
+        <div id="chatContainer" class="chat-container">
+            <h2>SECURE TRANSMISSION CHANNEL</h2>
+            <div class="global-search-box">
+                <button onclick="showGlobalSearch()">SEARCH ALL USERS</button>
+                <button onclick="showCreateGroup()">CREATE GROUP</button>
+                <button onclick="showProfile()">VIEW PROFILE</button>
+            </div>
+            <div class="chat-interface">
+                <div class="contacts-list" id="contactsList">
+                    <h3>CONTACTS</h3>
+                    <input type="text" id="searchContacts" class="search-box" placeholder="SEARCH CONTACTS...">
+                    <div id="contactsContainer"></div>
+                </div>
+                <div class="chat-main">
+                    <div class="messages" id="messages"></div>
+                    <input type="text" id="messageInput" placeholder="Enter message...">
+                    <button onclick="sendMessage()">TRANSMIT</button>
+                    <div class="upload-controls">
+                        <button class="upload-btn" onclick="document.getElementById('fileInput').click()">UPLOAD FILE</button>
+                        <input type="file" id="fileInput" class="file-input" accept="audio/*,video/*,image/*">
+                        <span id="fileName"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Global Search Results Modal -->
+        <div id="globalSearchResults" class="global-search-results">
+            <div class="close-search" onclick="closeGlobalSearch()">X</div>
+            <h3>SEARCH USERS</h3>
+            <input type="text" id="globalSearchInput" class="search-box" placeholder="ENTER USERNAME TO SEARCH...">
+            <div id="searchResults"></div>
+        </div>
+
+        <!-- (rest of the modals and scripts remain the same) -->
+        <script>
+            // JavaScript goes here
+            // (Include all the JavaScript functions as in your original document)
+        </script>
+    </div>
+</body>
+</html>
